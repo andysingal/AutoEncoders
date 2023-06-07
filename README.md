@@ -37,4 +37,15 @@ Variational Autoencoders (VAE) help us resolve this problem by generating vector
 
 In essence, in VAE, we are specifying that the bottleneck layer should follow a certain distribution. In the next sections, we will learn about the strategy we adopt with VAE, and we will also learn about KL divergence loss, which helps us fetch bottleneck features that follow a certain distribution.
 
+##Working of VAE
+ We enable that with a VAE by adopting the following strategy:
+
+- The output of the encoder is two vectors for each image:
+- One vector represents the mean.
+- The other represents the standard deviation.
+- From these two vectors, we fetch a modified vector that is the sum of the mean and standard deviation (which is multiplied by a random small number). The modified vector will be of the same number of dimensions as each vector.
+- The modified vector obtained in the previous step is passed as input to the decoder to fetch the image.
+- The loss value that we optimize for is a combination of the mean squared error and the KL divergence loss:
+- KL divergence loss measures the deviation of the distribution of the mean vector and the standard deviation vector from 0 and 1, respectively.
+- Mean squared loss is the optimization we use to re-construct (decode) an image.
 
