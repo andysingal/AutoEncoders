@@ -14,3 +14,5 @@ Generating new samples with GANs
 --Steps for Optimization: One training step of a GAN model with such a value function requires two optimization steps: (1) maximizing the payoff for the discriminator and (2) minimizing the payoff for the generator. A practical way of training GANs is to alternate between these two optimization steps: (1) fix (freeze) the parameters of one network and optimize the weights of the other one, and (2) fix the second network and optimize the first one. This process should be repeated at each training iteration. 
 
 Understanding the loss functions for the generator and discriminator networks in a GAN model
+
+![22](https://github.com/andysingal/AutoEncoders/blob/main/GAN/images/Screenshot%202023-06-13%20at%2010.27.12%20AM.png)
